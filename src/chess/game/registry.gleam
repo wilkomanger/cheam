@@ -1,7 +1,7 @@
 import gleam/io
 import gleam/map.{Map, insert, size}
 import gleam/int.{to_string}
-import gleam/erlang/process.{Pid, Subject}
+import gleam/erlang/process.{Subject}
 import gleam/otp/actor.{call, send}
 import chess/game.{Game}
 import chess/game/session.{GameSession}

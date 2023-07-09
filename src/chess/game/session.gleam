@@ -1,8 +1,5 @@
-import gleam/io
-import gleam/map.{Map, insert, size}
-import gleam/int.{to_string}
-import gleam/erlang/process.{Pid, Subject}
-import gleam/otp/actor.{call, send}
+import gleam/erlang/process.{Subject}
+import gleam/otp/actor
 import chess/game.{Game}
 
 pub opaque type GameSession {
