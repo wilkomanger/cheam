@@ -2,18 +2,18 @@ import gleam/http/cowboy
 import gleam/json.{to_string}
 import gleam/http/response
 import gleam/bit_builder
-import chess/game/manager.{new_game}
+import chess/game/registry.{new_game}
 import chess/http/mapper/game.{to_json} as game_mapper
 
 pub fn start() {
-  let game_manager = manager.create()
+  let game_registry = registry.create()
 
   cowboy.start(
     fn(request) {
       case request.path {
         "/new" -> {
           let assert Ok(game) =
-            game_manager
+            game_registry
             |> new_game()
 
           let body =
