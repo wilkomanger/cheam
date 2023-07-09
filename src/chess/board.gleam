@@ -3,7 +3,7 @@ import gleam/option.{None, Some}
 import chess/piece.{Bishop, King, Knight, Pawn, Queen, Rook}
 import chess/board/square.{Square}
 import chess/coordinates
-import chess/coordinates/rank.{I, II, VII, VIII}
+import chess/coordinates/rank
 import chess/coordinates/file.{A, B, C, D, E, F, G, H}
 import chess/color
 
@@ -29,8 +29,8 @@ pub fn initial() -> Board {
 
         let piece = {
           let piece_color = case rank {
-            I | II -> Some(color.White)
-            VII | VIII -> Some(color.Black)
+            rank.One | rank.Two -> Some(color.White)
+            rank.Seven | rank.Eight -> Some(color.Black)
             _ -> None
           }
 
@@ -38,8 +38,8 @@ pub fn initial() -> Board {
             None -> None
             Some(color) -> {
               let #(first_rank, second_rank) = case color {
-                color.White -> #(I, II)
-                color.Black -> #(VIII, VII)
+                color.White -> #(rank.One, rank.Two)
+                color.Black -> #(rank.Eight, rank.Seven)
               }
 
               case rank {

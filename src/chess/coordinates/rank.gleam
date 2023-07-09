@@ -1,37 +1,37 @@
 pub type Rank {
-  I
-  II
-  III
-  IV
-  V
-  VI
-  VII
-  VIII
+  One
+  Two
+  Three
+  Four
+  Five
+  Six
+  Seven
+  Eight
 }
 
 pub fn numeric(rank: Rank) -> Int {
   case rank {
-    I -> 1
-    II -> 2
-    III -> 3
-    IV -> 4
-    V -> 5
-    VI -> 6
-    VII -> 7
-    VIII -> 8
+    One -> 1
+    Two -> 2
+    Three -> 3
+    Four -> 4
+    Five -> 5
+    Six -> 6
+    Seven -> 7
+    Eight -> 8
   }
 }
 
 pub fn from_numeric(rank: Int) -> Rank {
   case rank {
-    1 -> I
-    2 -> II
-    3 -> III
-    4 -> IV
-    5 -> V
-    6 -> VI
-    7 -> VII
-    8 -> VIII
+    1 -> One
+    2 -> Two
+    3 -> Three
+    4 -> Four
+    5 -> Five
+    6 -> Six
+    7 -> Seven
+    8 -> Eight
     _ -> panic
   }
 }
